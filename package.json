@@ -1,0 +1,32 @@
+{
+  "name": "js-data-structures",
+  "version": "1.0.0",
+  "description": "Data structures implemented in JavaScript inspired by Programming Interviews Exposed",
+  "main": "null",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjng/js-data-structures.git"
+  },
+  "author": "Kevin Jang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kjng/js-data-structures/issues"
+  },
+  "homepage": "https://github.com/kjng/js-data-structures#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-register": "^6.24.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
