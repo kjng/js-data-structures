@@ -20,4 +20,14 @@ describe('linkedList', function() {
     var list = new linkedList(1);
     expect(list.getValue()).to.equal(1);
   });
+  it('should have a null next pointer on creation', function() {
+    var list = new linkedList(1);
+    expect(list.getNext()).to.equal(null);
+  });
+  it('setting next should point to the new node', function() {
+    var list = new linkedList(1);
+    var secondList = new linkedList(2);
+    list.setNext(secondList);
+    expect(list.getNext()).to.equal(secondList);
+  });
 });
