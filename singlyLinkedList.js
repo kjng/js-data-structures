@@ -1,4 +1,4 @@
-export function SinglyLinkedList(value) {
+export function SinglyLinkedList() {
   this.length = 0;
   this.head = null;
 }
@@ -30,12 +30,14 @@ SinglyLinkedList.prototype.addToHead = function(value) {
   // if no head
   if (!this.head) {
     this.head = newNode;
+    this.length++;
     return newNode;
   }
 
   // if there is a head, set the existing one to the next node of our new node
   newNode.next = this.head;
   this.head = newNode;
+  this.length++;
   return newNode;
 }
 
