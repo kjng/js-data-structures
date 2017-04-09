@@ -7,14 +7,13 @@ describe('Node', function() {
   it('should be a function', function() {
     expect(Node).to.be.a('function');
   })
-  it('should have a getValue method', function() {
-    expect(Node.prototype.getValue).to.exist;
-  });
   it('should have a setNext method', function() {
     expect(Node.prototype.setNext).to.exist;
   });
-  it('should have a getNext method', function() {
-    expect(Node.prototype.getNext).to.exist;
+  it('setNext should set the next property on a Node', function() {
+    var firstNode = new Node(1);
+    firstNode.setNext(new Node(2));
+    expect(firstNode.next.value).to.equal(2);
   });
 });
 
