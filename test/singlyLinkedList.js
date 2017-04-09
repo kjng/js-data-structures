@@ -7,6 +7,15 @@ describe('Node', function() {
   it('should be a function', function() {
     expect(Node).to.be.a('function');
   })
+  it('should have a value property', function() {
+    var newNode = new Node(1);
+    expect(newNode.value).to.exist;
+    expect(newNode.value).to.equal(1);
+  });
+  it('should have a next property', function() {
+    var newNode = new Node(1);
+    expect(newNode.next).to.equal(null);
+  });
   it('should have a setNext method', function() {
     expect(Node.prototype.setNext).to.exist;
   });
@@ -66,8 +75,15 @@ describe('SinglyLinkedList', function() {
   })
 
   describe('findNode', function() {
+    var newList = new SinglyLinkedList();
+    newList.addToTail(1);
+    newList.addToTail(2);
+    newList.addToTail(3);
     it('is a function', function() {
       expect(SinglyLinkedList.prototype.findNode).to.be.a('function');
+    });
+    it('should return the node if it is found', function() {
+      expect(newList.findNode(3)).to.eql(2);
     });
   });
 });
