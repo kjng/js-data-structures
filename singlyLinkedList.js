@@ -22,7 +22,7 @@ SinglyLinkedList.prototype.addToTail = function(value) {
   currentNode.next = newNode;
   this.length++;
   return newNode;
-}
+};
 
 SinglyLinkedList.prototype.addToHead = function(value) {
   var newNode = new Node(value);
@@ -39,22 +39,24 @@ SinglyLinkedList.prototype.addToHead = function(value) {
   this.head = newNode;
   this.length++;
   return newNode;
-}
+};
+
+SinglyLinkedList.prototype.findNode = function(value) {};
 
 export function Node(value) {
   this.value = value;
   this.next = null;
-}
+};
 
 Node.prototype.getValue = function() {
   return this.value;
-}
+};
 
 Node.prototype.setNext = function(listEl) {
   this.next = listEl;
   return listEl;
-}
+};
 
 Node.prototype.getNext = function() {
   return this.next;
-}
+};
