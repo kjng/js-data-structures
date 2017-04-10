@@ -83,10 +83,10 @@ describe('SinglyLinkedList', function() {
       expect(SinglyLinkedList.prototype.findNode).to.be.a('function');
     });
     it('should return the node if it is found', function() {
-      var foundNode = newList.findNode(3);
+      var foundNode = newList.findNode(2);
       expect(foundNode).to.exist;
-      expect(foundNode.value).to.equal(3);
-      expect(foundNode.next).to.eql(new Node(2));
+      expect(foundNode.value).to.equal(2);
+      expect(foundNode.next).to.eql(new Node(3));
     });
     it('should return false if the node is not found', function() {
       expect(newList.findNode(4)).to.equal(false);

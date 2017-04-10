@@ -41,7 +41,19 @@ SinglyLinkedList.prototype.addToHead = function(value) {
   return newNode;
 };
 
-SinglyLinkedList.prototype.findNode = function(value) {};
+SinglyLinkedList.prototype.findNode = function(value) {
+  var currentNode = this.head;
+
+  while (currentNode) {
+    if (currentNode.value === value) {
+      return currentNode;
+    } else {
+      currentNode = currentNode.next;
+    }
+  }
+
+  return false;
+};
 
 export function Node(value) {
   this.value = value;
