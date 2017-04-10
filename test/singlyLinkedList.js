@@ -122,6 +122,14 @@ describe('SinglyLinkedList', function() {
       newList.deleteNode(2);
       expect(newList.head.next.value).to.equal(3);
     });
+    it('handles removal of the last node in a multiple node list', function() {
+      var newList = new SinglyLinkedList();
+      newList.addToTail(1);
+      newList.addToTail(2);
+      expect(newList.head.next.value).to.equal(2);
+      newList.deleteNode(2);
+      expect(newList.head.next).to.equal(null);
+    });
     it('returns false if the node is not present', function() {
       var newList = new SinglyLinkedList();
       expect(newList.deleteNode(1)).to.equal(false);
