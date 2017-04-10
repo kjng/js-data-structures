@@ -79,6 +79,7 @@ describe('SinglyLinkedList', function() {
     newList.addToTail(1);
     newList.addToTail(2);
     newList.addToTail(3);
+
     it('is a function', function() {
       expect(SinglyLinkedList.prototype.findNode).to.be.a('function');
     });
@@ -90,6 +91,36 @@ describe('SinglyLinkedList', function() {
     });
     it('should return false if the node is not found', function() {
       expect(newList.findNode(4)).to.equal(false);
+    });
+  });
+
+  describe('deleteNode', function() {
+    it('is a function', function() {
+      expect(SinglyLinkedList.prototype.deleteNode).to.be.a('function');
+    });
+    it('deletes the node and updates the list length', function() {
+      var newList = new SinglyLinkedList();
+      newList.addToTail(1);
+      expect(newList.length).to.equal(1);
+      newList.deleteNode(1);
+      expect(newList.length).to.equal(0);
+    });
+    it('deletes the node and updates the list head', function() {
+      var newList = new SinglyLinkedList();
+      newList.addToTail(1);
+      expect(newList.head).to.eql(new Node(1));
+      newList.deleteNode(1);
+      expect(newList.head).to.equal(null);
+    });
+    it('updates the list head and next references in a list containing multiple nodes', function() {
+      var newList = new SinglyLinkedList();
+      newList.addToTail(1);
+      newList.addToTail(2);
+      newList.addToTail(3);
+      expect(newList.head).to.eql(new Node(1));
+      expect(newList.head.next).to.eql(new Node(2));
+      newList.deleteNode(2);
+      expect(newList.head.next).to.eql(new Node(3));
     });
   });
 });
