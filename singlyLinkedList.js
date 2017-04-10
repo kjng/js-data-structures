@@ -55,6 +55,30 @@ SinglyLinkedList.prototype.findNode = function(value) {
   return false;
 };
 
+SinglyLinkedList.prototype.deleteNode = function(value) {
+  var currentNode = this.head;
+  var deletedNode = null;
+
+  if (this.head && this.head.value === value) {
+    deletedNode = this.head;
+    this.head = this.head.next;
+    this.length--;
+    return deletedNode;
+  }
+
+  while (currentNode) {
+    if (currentNode.next && currentNode.next.value === value) {
+      deletedNode = currentNode.next;
+      // set next reference to the node after the deleted one
+      currentNode.next = currentNode.next.next;
+    }
+    this.length--;
+    return deletedNode;
+  }
+
+  return false;
+};
+
 export function Node(value) {
   this.value = value;
   this.next = null;

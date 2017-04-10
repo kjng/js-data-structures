@@ -112,15 +112,19 @@ describe('SinglyLinkedList', function() {
       newList.deleteNode(1);
       expect(newList.head).to.equal(null);
     });
-    it('updates the list head and next references in a list containing multiple nodes', function() {
+    it('updates the list references in a list containing multiple nodes', function() {
       var newList = new SinglyLinkedList();
       newList.addToTail(1);
       newList.addToTail(2);
       newList.addToTail(3);
-      expect(newList.head).to.eql(new Node(1));
-      expect(newList.head.next).to.eql(new Node(2));
+      expect(newList.head.value).to.equal(1);
+      expect(newList.head.next.value).to.equal(2);
       newList.deleteNode(2);
-      expect(newList.head.next).to.eql(new Node(3));
+      expect(newList.head.next.value).to.equal(3);
+    });
+    it('returns false if the node is not present', function() {
+      var newList = new SinglyLinkedList();
+      expect(newList.deleteNode(1)).to.equal(false);
     });
   });
 });
