@@ -1,5 +1,5 @@
 import chai from 'chai';
-import { SinglyLinkedList, Node } from '../singlyLinkedList';
+import { SinglyLinkedList, Node } from '../src/singlyLinkedList';
 
 const expect = chai.expect;
 

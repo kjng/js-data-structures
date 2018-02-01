@@ -1,5 +1,5 @@
 import chai from 'chai';
-import { Node, bfs } from '../bfs';
+import { Node, bfs } from '../src/bfs';
 
 const expect = chai.expect;
 
