@@ -4,7 +4,8 @@
   "description": "Data structures implemented in JavaScript inspired by Programming Interviews Exposed",
   "main": "null",
   "scripts": {
-    "test": "mocha --compilers js:babel-register"
+    "test": "mocha --compilers js:babel-register",
+    "test:watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",
